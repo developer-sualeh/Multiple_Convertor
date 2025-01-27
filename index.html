@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Multiple Calculator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1 class="main-heading">Multiple Calculator</h1>
+    <section class="section">
+      <div class="tabs">
+        <div class="btn-container">
+          <button class="button live" data-id="bmi">bmi</button>
+          <button class="button" data-id="loan">loan</button>
+          <button class="button" data-id="wgt">weight</button>
+          <button class="button" data-id="temperature">temperature</button>
+          <button class="button" data-id="currency">currency</button>
+        </div>
+        <div class="tab-content">
+          <!-- ========== Start BMI Section ========== -->
+          <div class="content live" id="bmi">
+            <div class="container">
+              <div class="content-tab">
+                <h2 class="heading">Body mass index Calculator</h2>
+                <span>your height (cm):</span>
+                <input
+                  type="number"
+                  id="height"
+                  class="input"
+                  value="180"
+                  placeholder="enter your height in cm"
+                />
+                <span> your weight (kg):</span>
+                <input
+                  type="number"
+                  id="weight"
+                  class="input"
+                  value="80"
+                  placeholder="enter your weight in kg"
+                />
+                <button class="btn" id="bmi-btn">compute BMI</button>
+                <input disabled type="text" class="input" id="bmi-result" />
+                <h4 class="info">
+                  weight condition: <span id="weight-condition"></span>
+                </h4>
+              </div>
+            </div>
+          </div>
+          <!-- ========== End BMI Section ========== -->
+
+          <!-- ========== Start loan Section ========== -->
+          <div class="content" id="loan">
+            <div class="container">
+              <div class="content-tab">
+                <h2 class="heading">Loan Calculator</h2>
+                <span>Loan Amount</span>
+                <input
+                  type="number"
+                  id="loan-amount"
+                  class="input"
+                  value="100000"
+                  min="1"
+                  max="1000000000"
+                />
+                <span> Interest Rate %</span>
+                <input
+                  type="number"
+                  id="intereset-rate"
+                  class="input"
+                  value="10"
+                  min="0"
+                  max="50"
+                  step=".1"
+                />
+                <span>Months to Pay</span>
+                <input
+                  type="number"
+                  value="12"
+                  class="input"
+                  id="months-to-pay"
+                  min="6"
+                  max="60"
+                />
+                <p class="info">Monthly Payment:</p>
+              </div>
+            </div>
+          </div>
+          <!-- ========== End loan Section ========== -->
+
+          <!-- ========== Start weight Section ========== -->
+          <div class="content" id="wgt">
+            <div class="container">
+              <div class="weight-container">
+                <h2 class="heading">weight Convertor</h2>
+                <div class="input-container">
+                  <label for="pounds">Weight: (kg)</label>
+                  <input
+                    placeholder="Enter Number"
+                    type="number"
+                    id="weight-input"
+                    class="input"
+                    step=".1"
+                  />
+                </div>
+                <p class="info">
+                  your weight in pounds is:
+                  <span id="result"></span>
+                </p>
+                <p class="error" id="error"></p>
+              </div>
+            </div>
+          </div>
+          <!-- ========== End weight Section ========== -->
+
+          <!-- ========== Start temperature Section ========== -->
+          <div class="content" id="temperature">
+            <div class="container">
+              <div class="content-tab">
+                <h2 class="heading">Temperature Convertor</h2>
+                <span>celsius</span>
+                <input
+                  type="number"
+                  id="height"
+                  class="input"
+                  value="180"
+                  placeholder="enter your height in cm"
+                />
+                <span> Fahrenheit</span>
+                <input
+                  type="number"
+                  id="weight"
+                  class="input"
+                  value="80"
+                  placeholder="enter your weight in kg"
+                />
+                <span> kelvin</span>
+                <input type="number" value="50" class="input" id="bmi-result" />
+              </div>
+            </div>
+          </div>
+          <!-- ========== End temperature Section ========== -->
+
+          <!-- ========== Start currency Section ========== -->
+          <div class="content" id="currency">
+            <div class="container">
+              <div class="content-tab">
+                <h2 class="heading">Currency Convertor</h2>
+                <div class="currency-container">
+                  <select name="" id="currency-first">
+                    <option value="AUD">AUD</option>
+                    <option value="CAD">CAD</option>
+                    <option value="EUR">EUR</option>
+                    <option value="GBP">GBP</option>
+                    <option value="INR">INR</option>
+                    <option value="JPY">JPY</option>
+                    <option value="USD" selected>USD</option>
+                  </select>
+                  <input type="number" id="worst-first" value="1" min="0" />
+                </div>
+                <div class="currency-container">
+                  <select name="" id="currency-second">
+                    <option value="AUD">AUD</option>
+                    <option value="CAD">CAD</option>
+                    <option value="EUR">EUR</option>
+                    <option value="GBP">GBP</option>
+                    <option value="INR" selected>INR</option>
+                    <option value="JPY">JPY</option>
+                    <option value="USD">USD</option>
+                  </select>
+                  <input type="number" id="worst-second" disabled />
+                </div>
+                <p class="exchange-rate" id="exchange-rate">
+                  1 USD = 138.5802 JPY
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- ========== End currency Section ========== -->
+        </div>
+      </div>
+    </section>
+    <script src="script.js"></script>
+  </body>
+</html>
