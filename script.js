@@ -45,6 +45,20 @@ const calculateBmi = () => {
 bmiBtn.addEventListener("click", calculateBmi);
 // BMI tab javascript end here
 
+// Loan tab javascript start here
+
+const calculateLoan = () => {
+  const loanAmount = document.getElementById("loan-amount").value;
+  const interestRate = document.getElementById("interest-rate").value;
+  const monthsToPay = document.getElementById("months-to-pay").value;
+  const payment = document.getElementById("payment");
+  const interest = (loanAmount * (interestRate * 0.01)) / monthsToPay;
+
+  const monthlyPayment = (loanAmount / monthsToPay + interest).toFixed(2);
+  payment.innerHTML = `Monthly Payment : ${monthlyPayment}`;
+};
+// loan tab end here
+
 // weight tab javascript begin
 const weightInput = document.getElementById("weight-input");
 const errorEl = document.getElementById("error");
