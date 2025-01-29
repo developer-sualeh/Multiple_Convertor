@@ -134,6 +134,7 @@ span {
 
 /***** currency Section *****/
 .heading {
+  letter-spacing: 0.2rem;
   text-align: center;
 }
 .currency-container {
@@ -147,7 +148,7 @@ span {
   & input {
     border: 0;
     background: transparent;
-    text-align: center;
+    text-align: right;
     font-size: 2.4rem;
     font-weight: 500;
     color: rgb(124, 45, 124);

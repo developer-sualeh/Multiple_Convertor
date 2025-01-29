@@ -86,3 +86,59 @@ const UpdataWeight = () => {
 
 weightInput.addEventListener("input", UpdataWeight);
 // weight tab javascript end here
+
+//  temperature tab javascript
+
+const celsiusEL = document.getElementById("cel");
+const fehEL = document.getElementById("fah");
+const kelEL = document.getElementById("kel");
+
+const computeTemp = (event) => {
+  const currentValue = +event.target.value;
+
+  switch (event.target.name) {
+    case "cel":
+      kelEL.value = (currentValue + 273.32).toFixed(2);
+      fehEL.value = (currentValue * 1.8 + 32).toFixed(2);
+      break;
+    case "fah":
+      celsiusEL.value = ((currentValue - 32) / 1.8).toFixed(2);
+      kelEL.value = ((currentValue - 32) / 1.8 + 32).toFixed;
+      break;
+    case "kel":
+      celsiusEL.value = (currentValue - 273.32).toFixed(2);
+      fehEL.value = ((currentValue - 273.32) * 1.8 + 32).toFixed(2);
+      break;
+
+    default:
+      break;
+  }
+};
+
+// Currency tab start here
+
+const currFirstEl = document.getElementById("currency-first");
+const currSecondEl = document.getElementById("currency-second");
+const worstSecondEl = document.getElementById("worst-second");
+const worstFirstEl = document.getElementById("worst-first");
+const exchangeRate = document.getElementById("exchange-rate");
+
+const UpdateRate = async () => {
+  const apiKey = `https://v6.exchangerate-api.com/v6/566681c2f49c95f9e643d712/latest/${currFirstEl.value}`;
+
+  const response = await fetch(apiKey);
+  const data = await response.json();
+
+  const rate = data.conversion_rates[currSecondEl.value];
+  console.log(rate);
+  exchangeRate.innerText = `1 ${currFirstEl.value} = ${
+    rate + " " + currSecondEl.value
+  }`;
+  worstSecondEl.value = (worstFirstEl.value * rate).toFixed(2);
+};
+
+UpdateRate();
+currFirstEl.addEventListener("change", UpdateRate);
+currSecondEl.addEventListener("change", UpdateRate);
+worstFirstEl.addEventListener("input", UpdateRate);
+worstSecondEl.addEventListener("input", UpdateRate);

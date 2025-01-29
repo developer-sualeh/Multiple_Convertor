@@ -123,22 +123,31 @@
                 <h2 class="heading">Temperature Convertor</h2>
                 <span>celsius</span>
                 <input
+                  onchange="computeTemp(event)"
                   type="number"
-                  id="height"
+                  id="cel"
+                  name="cel"
                   class="input"
-                  value="180"
-                  placeholder="enter your height in cm"
+                  placeholder="Enter Temperature"
                 />
                 <span> Fahrenheit</span>
                 <input
+                  onchange="computeTemp(event)"
                   type="number"
-                  id="weight"
+                  id="fah"
+                  name="fah"
                   class="input"
-                  value="80"
-                  placeholder="enter your weight in kg"
+                  placeholder="Enter Temperature"
                 />
                 <span> kelvin</span>
-                <input type="number" value="50" class="input" id="bmi-result" />
+                <input
+                  onchange="computeTemp(event)"
+                  type="number"
+                  class="input"
+                  id="kel"
+                  name="kel"
+                  placeholder="Enter Temperature"
+                />
               </div>
             </div>
           </div>
